@@ -43,3 +43,4 @@ Observations and tips for auditing protocols on different chains 🧐
 
 ## Polygon zkEVM
 
+## Base
