@@ -28,6 +28,10 @@ Observations and tips for auditing protocols on different chains 🧐
 
 ## BSC
 
+- Decimals 
+  - [USDT](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955#readContract#F6)
+  - [USDC](https://bscscan.com/address/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d#readProxyContract#F3)
+
 ### References
 
 - [BNB Smart Chain vs Polygon - Comparing the Differences](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
