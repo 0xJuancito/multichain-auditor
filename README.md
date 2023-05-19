@@ -2,6 +2,8 @@
 
 Observations and tips for auditing protocols on different chains 🧐
 
+## Ethereum
+
 ## Arbitrum
 
 ### References
