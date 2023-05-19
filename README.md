@@ -44,3 +44,7 @@ Observations and tips for auditing protocols on different chains 🧐
 ## Polygon zkEVM
 
 ## Base
+
+### References
+
+- [Differences between Ethereum and Base](https://docs.base.org/differences/)
