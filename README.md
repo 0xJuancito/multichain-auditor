@@ -25,3 +25,10 @@ Observations and tips for auditing protocols on different chains 🧐
 ### References
 
 - [Differences Between Moonbeam and Ethereum](https://docs.moonbeam.network/learn/features/eth-compatibility/)
+
+## BSC
+
+### References
+
+- [BNB Smart Chain vs Polygon - Comparing the Differences](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
+- [Token Standard Comparison](https://docs.bnbchain.org/docs/migration/evm-chains/token-comparison)
