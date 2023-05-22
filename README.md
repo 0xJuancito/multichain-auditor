@@ -29,6 +29,12 @@ For some chains, `block.number` is NOT a reliable source of timing information. 
 
 💡 Look for the use of `block.number` as a time reference, especially on L2.
 
+### `transfer`, `send` and fixed gas operations
+
+`transfer` and `send` forward a hardcoded amount of gas and are discouraged as [gas costs can change](https://consensys.net/diligence/blog/2019/09/stop-using-soliditys-transfer-now/). On certain chains that cost can be higher than in Mainnet, and can result in issues, like in [zkSync Era](https://twitter.com/zksync/status/1644139364270878720).
+
+💡 Look for fixed gas operations like `transfer` or `send`.
+
 ---
 
 ## Ethereum
