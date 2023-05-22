@@ -56,6 +56,20 @@ Although cheaper, each case should be analyzed to check if it is economically vi
 
 💡 Analyze attack vectors that require low gas fees or where a considerable numbers of transactions have to be executed
 
+### L2 Sequencer Uptime Feeds in Chainlink
+
+From [Chainlink documentation](https://docs.chain.link/data-feeds/l2-sequencer-feeds):
+
+> Optimistic rollup protocols have a sequencer that executes and rolls up the L2 transactions by batching multiple transactions into a single transaction.
+
+> If a sequencer becomes unavailable, it is impossible to access read/write APIs that consumers are using and applications on the L2 network will be down for most users.
+
+This means that if the project does not check if the sequencer is down, it can return stale results.
+
+Mitigations can be found on [Handling Arbitrum outages](https://docs.chain.link/data-feeds/l2-sequencer-feeds#handling-arbitrum-outages) and [Handling outages on Optimism and Metis](https://docs.chain.link/data-feeds/l2-sequencer-feeds#handling-outages-on-optimism-and-metis).
+
+💡 Check if the projects handles the scenarios where a sequencer is down on optimistic rollup protocols.
+
 ---
 
 ## Ethereum
