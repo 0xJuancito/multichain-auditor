@@ -80,6 +80,17 @@ Chainlink provides more price feeds for some chains like [Ethereum](https://docs
 
 💡 Check that the correct addresses are set correctly for each chain if they are hardcoded.
 
+### ERC20 decimals
+
+Some ERC20 tokens have a different `decimals` value on different chain. Even some popular ones like USDT and USDC have 6 decimals on Ethereum, and 18 decimals on BSC for example:
+
+- [USDT on Ethereum](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#readContract#F6) - 6 decimals
+- [USDC on Ethereum](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48#readProxyContract#F11) - 6 decimals
+- [USDT on BSC](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955#readContract#F6) - 18 decimals
+- [USDC on BSC](https://bscscan.com/address/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d#readProxyContract#F3) - 18 decimals
+
+💡 Check that the correct `decimals` are set for the deployed chains if the token values are hardcoded.
+
 ---
 
 ## Differences from Ethereum
@@ -93,9 +104,3 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 - [Differences between Ethereum and Base](https://docs.base.org/differences/)
 - [BNB Smart Chain vs Polygon - Comparing the Differences](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
 - [BSC Token Standard Comparison](https://docs.bnbchain.org/docs/migration/evm-chains/token-comparison)
-
-## BSC
-
-- Decimals 
-  - [USDT](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955#readContract#F6)
-  - [USDC](https://bscscan.com/address/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d#readProxyContract#F3)
