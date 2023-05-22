@@ -2,9 +2,13 @@
 
 Observations and tips for auditing protocols on different chains 🧐
 
-### ✍️ Open to Contributions
+#### ✍️ Open to Contributions
 
 If you see some error, or want to add an observation, please create an issue or a PR. References are greatly appreciated. You can also contact me via [Twitter](https://twitter.com/0xJuancito).
+
+#### 📜 Disclaimer
+
+Take the observations in this repository as a guideline and kickstarter to your findings. Please do not use them as a tool to spam audit contests. Do your own research.
 
 ## General Observations
 
