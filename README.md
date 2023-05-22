@@ -70,6 +70,16 @@ Mitigations can be found on [Handling Arbitrum outages](https://docs.chain.link/
 
 💡 Check if the projects handles the scenarios where a sequencer is down on optimistic rollup protocols.
 
+### Chainlink Price Feeds
+
+> Chainlink Data Feeds provide data that is aggregated from many data sources by a decentralized set of independent node operators.
+
+Chainlink provides more price feeds for some chains like [Ethereum](https://docs.chain.link/data-feeds/price-feeds/addresses/?network=ethereum) than others like [Base](https://docs.chain.link/data-feeds/price-feeds/addresses/?network=base) for example. On other chains, no feed may be supported. Also, the same feed like AAVE/USD may have one address on a chain like [Ethereum](https://etherscan.io/address/0x6Df09E975c830ECae5bd4eD9d90f3A95a4f88012), and another one on [Moonriver](https://moonriver.moonscan.io/address/0x37f35ef6735c594e6E803bC81577bAC759d8179C).
+
+💡 Check that the price feed for the desired pair is supported on all of the deployed chains.
+
+💡 Check that the correct addresses are set correctly for each chain if they are hardcoded.
+
 ---
 
 ## Ethereum
