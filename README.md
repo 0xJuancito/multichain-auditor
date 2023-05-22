@@ -35,6 +35,23 @@ For some chains, `block.number` is NOT a reliable source of timing information. 
 
 💡 Look for fixed gas operations like `transfer` or `send`.
 
+### Gas costs
+
+Transactions on Ethereum mainnet are much more expensive than on other chains. Chains with very low fees may open the possibility to implement attacks that require a large amount of transactions, or where the cost-benefit of the attack would now be profitable.
+
+Examples:
+
+- DOS on unbound arrays
+- DOS by filling bound arrays
+- Spamming that can incur in extra processing costs for the protocol
+- An attack that only drains smaller amounts of wei that wouldn't be profitable with high gas fees
+- Frontrunning operations to prevent txs to be executed during a time frame (liquidations, complete auctions, etc.)
+- Griefing attacks against the protocol
+
+Although cheaper, each case should be analyzed to check if it is economically viable to actually be considered an attack.
+
+💡 Analyze attack vectors that require low gas fees or where a considerable numbers of transactions have to be executed
+
 ---
 
 ## Ethereum
