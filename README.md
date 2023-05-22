@@ -4,7 +4,7 @@ Observations and tips for auditing protocols on different chains 🧐
 
 ## General Observations
 
-### Block time is different on different chains
+### Block time is not the same on different chains
 
 Block time refers to the time separating blocks. The average block time in [Ethereum](https://ethereum.org/en/developers/docs/blocks/#block-time) is 12s, but this value is different on different chains.
 
