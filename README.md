@@ -4,6 +4,12 @@ Observations and tips for auditing protocols on different chains 🧐
 
 ## General Observations
 
+### Support for the `push0` opcode
+
+`push0` is an instruction which pushes the constant value 0 onto the stack. This opcode is still not supported by many chains, like [Arbitrum](https://developer.arbitrum.io/solidity-support#Differences%20from%20Solidity%20on%20Ethereum) and might be problematic for projects compiled with a version of Solidity `>= 0.8.20` (when it was introduced).
+
+💡 Pay attention to projects using a Solidity version `>= 0.8.20` and check the chain support where it will be deployed.
+
 ### Block time is not the same on different chains
 
 Block time refers to the time separating blocks. The average block time in [Ethereum](https://ethereum.org/en/developers/docs/blocks/#block-time) is 12s, but this value is different on different chains.
