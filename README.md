@@ -1,6 +1,6 @@
 # Multichain Auditor
 
-Observations and tips for auditing protocols on different chains 🧐
+Observations and tips for auditing protocols on multiple chains 🧐
 
 #### ✍️ Open to Contributions
 
