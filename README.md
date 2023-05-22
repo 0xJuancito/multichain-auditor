@@ -86,7 +86,7 @@ Chainlink provides more price feeds for some chains like [Ethereum](https://docs
 
 ### ERC20 decimals
 
-Some ERC20 tokens have a different `decimals` value on different chain. Even some popular ones like USDT and USDC have 6 decimals on Ethereum, and 18 decimals on BSC for example:
+Some ERC20 tokens have different `decimals` on different chains. Even some popular ones like USDT and USDC have 6 decimals on Ethereum, and 18 decimals on BSC for example:
 
 - [USDT on Ethereum](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#readContract#F6) - 6 decimals
 - [USDC on Ethereum](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48#readProxyContract#F11) - 6 decimals
