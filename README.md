@@ -2,6 +2,21 @@
 
 Observations and tips for auditing protocols on different chains 🧐
 
+## General Observations
+
+### Block Time is Different on Different Chains
+
+Block time refers to the time separating blocks. The average block time in Ethereum is 12s, but this value is different on different chains.
+
+💡 Look for harcoded time values dependent on the `block.number` that may only be valid on Mainnet.
+
+Example: 
+
+```solidity
+// 1 block every 12 sec -> 5 blocks / min
+uint256 auctionDuration = 7200; // Auction duration lasts for one day (5 * 60 * 24 = 7200)
+```
+
 ## Ethereum
 
 ## Arbitrum
