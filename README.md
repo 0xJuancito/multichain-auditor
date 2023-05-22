@@ -17,6 +17,12 @@ uint256 auctionDuration = 7200; // Auction duration lasts for one day (5 * 60 * 
 
 💡 Look for harcoded time values dependent on the `block.number` that may only be valid on Mainnet.
 
+### Block production may not be constant
+
+For some chains, `block.number` is NOT a reliable source of timing information. Especially in L2 like [Optimism](https://community.optimism.io/docs/developers/build/differences/#block-production-is-not-constant) for example.
+
+💡 Look for the use of `block.number` as a time reference, especially on L2.
+
 ---
 
 ## Ethereum
