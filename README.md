@@ -8,7 +8,7 @@ Observations and tips for auditing protocols on different chains 🧐
 
 `push0` is an instruction which pushes the constant value 0 onto the stack. This opcode is still not supported by many chains, like [Arbitrum](https://developer.arbitrum.io/solidity-support#Differences%20from%20Solidity%20on%20Ethereum) and might be problematic for projects compiled with a version of Solidity `>= 0.8.20` (when it was introduced).
 
-💡 Pay attention to projects using a Solidity version `>= 0.8.20` and check the chain support where it will be deployed.
+💡 Pay attention to projects using a Solidity version `>= 0.8.20` and check if it is supported on the deployed chains.
 
 ### Block time is not the same on different chains
 
