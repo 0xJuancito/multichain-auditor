@@ -17,6 +17,8 @@ uint256 auctionDuration = 7200; // Auction duration lasts for one day (5 * 60 * 
 
 💡 Look for harcoded time values dependent on the `block.number` that may only be valid on Mainnet.
 
+---
+
 ## Ethereum
 
 ## Arbitrum
