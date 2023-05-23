@@ -149,6 +149,14 @@ This can break trust assumptions, because one contract may be trusted and anothe
 
 💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
 
+### `tx.origin == msg.sender`
+
+From [Optimism documentation](https://community.optimism.io/docs/developers/build/differences/#pre-eip-155-support):
+
+> On L1 Ethereum tx.origin is equal to msg.sender only when the smart contract was called directly from an externally owned account (EOA). However, on Optimism tx.origin is the origin on Optimism. It could be an EOA. However, in the case of messages from L1, it is possible for a message from a smart contract on L1 to appear on L2 with tx.origin == msg.sender. This is unlikely to make a significant difference, because an L1 smart contract cannot directly manipulate the L2 state. However, there could be edge cases we did not think about where this matters.
+
+💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
+
 ### Precompiles
 
 Chains have precompiled contracts on different addresses like [Arbitrum](https://developer.arbitrum.io/arbos/precompiles) or [Optimism](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/constants.ts). Care has to be taken if some is used that is not available, works differently or is o a different address.
