@@ -163,7 +163,33 @@ zkSync Era has many differences from Ethereum on EVM instructions like `CREATE`,
 
 💡 Double-check the compatibility of the contracts when being deployed to zkSync Era
 
-### Upgradability
+### Contracts Interface
+
+Some contracts have a slightly different interface on different chains, which may break compatibility. 
+
+USDT for example is missing its return value on Ethereum as the ERC20 specification suggests, but it is compliant on that aspect on Polygon. This may [lead to some vulnerabilities](https://github.com/d-xo/weird-erc20#missing-return-values) on some chains, while not on others.
+
+[USDT on Ethereum](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#code):
+
+```solidity
+  function transfer(address _to, uint _value) public whenNotPaused {
+```
+
+[USDT Implementation](https://polygonscan.com/address/0x7ffb3d637014488b63fb9858e279385685afc1e2#code) | [USDT Proxy](https://polygonscan.com/token/0xc2132d05d31c914a87c6611c10748aeb04b58e8f#readProxyContract) on Polygon:
+
+```solidity
+  function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
+```
+
+[ERC20 transfer specification](https://eips.ethereum.org/EIPS/eip-20):
+
+```solidity
+  function transfer(address _to, uint256 _value) public returns (bool success)
+```
+
+💡 Verify that the contracts respect the same interface on different chains, or that sufficient mitigations are taken.
+
+### Contracts Upgradability
 
 Some contracts are immutable on a chain but upgradeable on others, like [USDT in Ethereum](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#code) vs [USDT in Polygon](https://polygonscan.com/token/0xc2132d05d31c914a87c6611c10748aeb04b58e8f#code).
 
