@@ -13,6 +13,28 @@ Take the observations in this repository as a guideline and kickstarter to your 
 ## Index
 
 - [General Observations](#general-observations)
+  - [Block time is not the same on different chains](#block-time-is-not-the-same-on-different-chains)
+  - [Block production may not be constant](#block-production-may-not-be-constant)
+  - [L2 Sequencer Uptime Feeds in Chainlink](#l2-sequencer-uptime-feeds-in-chainlink)
+  - [Chainlink Price Feeds](#chainlink-price-feeds)
+  - [AMM pools token0 and token1 order](#amm-pools-token0-and-token1-order)
+  - [Modified Opcodes](#modified-opcodes)
+  - [Support for the push0 opcode](#support-for-the-push0-opcode)
+  - [Address Aliasing - tx.origin / msg.sender](#address-aliasing---txorigin--msgsender)
+  - [tx.origin == msg.sender](#txorigin--msgsender)
+  - [transfer, send and fixed gas operations](#txorigin--msgsender)
+  - [Gas fees](#gas-fees)
+  - [Signature replay](#signature-replay)
+  - [Frontrunning](#frontrunning)
+  - [Hardcoded Contract Addresses](#hardcoded-contract-addresses)
+  - [ERC20 decimals](#erc20-decimals)
+  - [Contracts Interface](#contracts-interface)
+  - [Contracts Upgradability](#contracts-upgradability)
+  - [Contracts may behave differently](#contracts-may-behave-differently)
+  - [Precompiles](#precompiles)
+  - [zkSync Era](#zksync-era)
+- [Differences from Ethereum](#differences-from-ethereum)
+- [TODO / Planned](#todo--planned)
 
 ## General Observations
 
