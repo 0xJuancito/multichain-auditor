@@ -12,12 +12,6 @@ Take the observations in this repository as a guideline and kickstarter to your 
 
 ## General Observations
 
-### Support for the `push0` opcode
-
-`push0` is an instruction which pushes the constant value 0 onto the stack. This opcode is still not supported by many chains, like [Arbitrum](https://developer.arbitrum.io/solidity-support#Differences%20from%20Solidity%20on%20Ethereum) and might be problematic for projects compiled with a version of Solidity `>= 0.8.20` (when it was introduced).
-
-💡 Pay attention to projects using a Solidity version `>= 0.8.20` and check if it is supported on the deployed chains.
-
 ### Block time is not the same on different chains
 
 Block time refers to the time separating blocks. The average block time in [Ethereum](https://ethereum.org/en/developers/docs/blocks/#block-time) is 12s, but this value is different on different chains.
@@ -36,29 +30,6 @@ uint256 auctionDuration = 7200; // Auction duration lasts for one day (5 * 60 * 
 For some chains, `block.number` is NOT a reliable source of timing information. Especially in L2 like [Optimism](https://community.optimism.io/docs/developers/build/differences/#block-production-is-not-constant) for example.
 
 💡 Look for the use of `block.number` as a time reference, especially on L2.
-
-### `transfer`, `send` and fixed gas operations
-
-`transfer` and `send` forward a hardcoded amount of gas and are [discouraged as gas costs can change](https://consensys.net/diligence/blog/2019/09/stop-using-soliditys-transfer-now/). On certain chains that cost can be higher than in Mainnet, and can result in issues, like in [zkSync Era](https://twitter.com/zksync/status/1644139364270878720).
-
-💡 Look for fixed gas operations like `transfer` or `send`.
-
-### Gas fees
-
-Transactions on Ethereum mainnet are much more expensive than on other chains. Chains with very low fees may open the possibility to implement attacks that require a large amount of transactions, or where the cost-benefit of the attack would now be profitable.
-
-Examples:
-
-- DOS on unbound arrays
-- DOS by filling bound arrays
-- Spamming that can incur in extra processing costs for the protocol
-- An attack that only drains smaller amounts of wei that wouldn't be profitable with high gas fees
-- Frontrunning operations to prevent txs to be executed during a time frame (liquidations, complete auctions, etc.)
-- Griefing attacks against the protocol
-
-Although cheaper, each case should be analyzed to check if it is economically viable to actually be considered an attack.
-
-💡 Analyze attack vectors that require low gas fees or where a considerable numbers of transactions have to be executed
 
 ### L2 Sequencer Uptime Feeds in Chainlink
 
@@ -84,25 +55,6 @@ Chainlink provides more price feeds for some chains like [Ethereum](https://docs
 
 💡 Check that the correct addresses are set correctly for each chain if they are hardcoded.
 
-### ERC20 decimals
-
-Some ERC20 tokens have different `decimals` on different chains. Even some popular ones like USDT and USDC have 6 decimals on Ethereum, and 18 decimals on BSC for example:
-
-- [USDT on Ethereum](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#readContract#F6) - 6 decimals
-- [USDC on Ethereum](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48#readProxyContract#F11) - 6 decimals
-- [USDT on BSC](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955#readContract#F6) - 18 decimals
-- [USDC on BSC](https://bscscan.com/address/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d#readProxyContract#F3) - 18 decimals
-
-💡 Check that the correct `decimals` are set for the deployed chains if the token values are hardcoded.
-
-### Hardcoded Contract Addresses
-
-Projects sometimes deploy their contracts on the same addresses over different chains but that is not always the case.
-
-Take WETH as an example. Its address on Ethereum is [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/token/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2), but [0x7ceb23fd6bc0add59e62ac25578270cff1b9f619](https://polygonscan.com/token/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619) on Polygon.
-
-💡 Verify external contract addresses for the chains where the contracts are deployed
-
 ### AMM pools `token0` and `token1` order
 
 In Uniswap and derived AMMs: `token0` is the token with the lower sort order, while `token1` is the token with the higher sort order, as described on [Uniswap documentation](https://docs.uniswap.org/contracts/v2/reference/smart-contracts/pair#token0). This is valid for both v2 and v3 pools.
@@ -112,6 +64,61 @@ The order is important because that determines which one is the base token, and 
 As contracts may have different addresses on different chains, the token order can change. That is the case for example on Optimism, where the pair is [WETH/USDC](https://info.uniswap.org/#/optimism/pools/0x85149247691df622eaf1a8bd0cafd40bc45154a9) while on Polygon it is [USDC/WETH](https://info.uniswap.org/#/polygon/pools/0x45dda9cb7c25131df268515131f647d726f50608).
 
 💡 Verify that the token orders is taking into account, and it is not assumed to be the same on all chains.
+
+### Modified Opcodes
+
+Some chains implement opcodes with some modification compared to Ethereum, or are not supported.
+
+Optimism for example, [has a different implementation](https://community.optimism.io/docs/developers/build/differences/#modified-opcodes) of opcodes like `block.coinbase`, `block.difficulty`, `block.basefee`. `tx.origin` may also behave different if the it is an L1 => L2 transaction. It also implements some new opcode [L1BLOCKNUMBER](Chains may also implement new opcodes).
+
+Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-support) in some operations/opcodes like: `blockhash(x)`, `block.coinbase`, `block.difficulty`, `block.number`. `msg.sender` may also behave different for L1 => L2 "retryable ticket" transactions.
+
+💡 Verify that the EVM opcodes and operations used by the protocol are compatible on all chains
+
+### Support for the `push0` opcode
+
+`push0` is an instruction which pushes the constant value 0 onto the stack. This opcode is still not supported by many chains, like [Arbitrum](https://developer.arbitrum.io/solidity-support#Differences%20from%20Solidity%20on%20Ethereum) and might be problematic for projects compiled with a version of Solidity `>= 0.8.20` (when it was introduced).
+
+💡 Pay attention to projects using a Solidity version `>= 0.8.20` and check if it is supported on the deployed chains.
+
+### Address Aliasing - `tx.origin` / `msg.sender`
+
+On some chains like [Optimism](https://community.optimism.io/docs/developers/build/differences/#using-eth-in-contracts), because of the behavior of the CREATE opcode, it is possible for a user to create a contract on L1 and on L2 that share the same address but have different bytecode.
+
+This can break trust assumptions, because one contract may be trusted and another be untrusted. To prevent this problem the behavior of the ORIGIN and CALLER opcodes (tx.origin and msg.sender) differs slightly between L1 and L2.
+
+💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
+
+### `tx.origin == msg.sender`
+
+From [Optimism documentation](https://community.optimism.io/docs/developers/build/differences/#pre-eip-155-support):
+
+> On L1 Ethereum tx.origin is equal to msg.sender only when the smart contract was called directly from an externally owned account (EOA). However, on Optimism tx.origin is the origin on Optimism. It could be an EOA. However, in the case of messages from L1, it is possible for a message from a smart contract on L1 to appear on L2 with tx.origin == msg.sender. This is unlikely to make a significant difference, because an L1 smart contract cannot directly manipulate the L2 state. However, there could be edge cases we did not think about where this matters.
+
+💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
+
+### `transfer`, `send` and fixed gas operations
+
+`transfer` and `send` forward a hardcoded amount of gas and are [discouraged as gas costs can change](https://consensys.net/diligence/blog/2019/09/stop-using-soliditys-transfer-now/). On certain chains that cost can be higher than in Mainnet, and can result in issues, like in [zkSync Era](https://twitter.com/zksync/status/1644139364270878720).
+
+💡 Look for fixed gas operations like `transfer` or `send`.
+
+### Gas fees
+
+Transactions on Ethereum mainnet are much more expensive than on other chains. Chains with very low fees may open the possibility to implement attacks that require a large amount of transactions, or where the cost-benefit of the attack would now be profitable.
+
+Examples:
+
+- DOS on unbound arrays
+- DOS by filling bound arrays
+- Spamming that can incur in extra processing costs for the protocol
+- An attack that only drains smaller amounts of wei that wouldn't be profitable with high gas fees
+- Frontrunning operations to prevent txs to be executed during a time frame (liquidations, complete auctions, etc.)
+- Griefing attacks against the protocol
+
+Although cheaper, each case should be analyzed to check if it is economically viable to actually be considered an attack.
+
+💡 Analyze attack vectors that require low gas fees or where a considerable numbers of transactions have to be executed
 
 ### Signature replay
 
@@ -131,37 +138,24 @@ But it may be [very difficult](https://help.optimism.io/hc/en-us/articles/444437
 
 💡 Verify if a frontrunning attack is possible due to chain constraints or economic viability
 
-### Modified Opcodes
+### Hardcoded Contract Addresses
 
-Some chains implement opcodes with some modification compared to Ethereum, or are not supported.
+Projects sometimes deploy their contracts on the same addresses over different chains but that is not always the case.
 
-Optimism for example, [has a different implementation](https://community.optimism.io/docs/developers/build/differences/#modified-opcodes) of opcodes like `block.coinbase`, `block.difficulty`, `block.basefee`. `tx.origin` may also behave different if the it is an L1 => L2 transaction. It also implements some new opcode [L1BLOCKNUMBER](Chains may also implement new opcodes).
+Take WETH as an example. Its address on Ethereum is [0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2](https://etherscan.io/token/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2), but [0x7ceb23fd6bc0add59e62ac25578270cff1b9f619](https://polygonscan.com/token/0x7ceb23fd6bc0add59e62ac25578270cff1b9f619) on Polygon.
 
-Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-support) in some operations/opcodes like: `blockhash(x)`, `block.coinbase`, `block.difficulty`, `block.number`. `msg.sender` may also behave different for L1 => L2 "retryable ticket" transactions.
+💡 Verify external contract addresses for the chains where the contracts are deployed
 
-💡 Verify that the EVM opcodes and operations used by the protocol are compatible on all chains
+### ERC20 decimals
 
-### Address Aliasing - `tx.origin` / `msg.sender`
+Some ERC20 tokens have different `decimals` on different chains. Even some popular ones like USDT and USDC have 6 decimals on Ethereum, and 18 decimals on BSC for example:
 
-On some chains like [Optimism](https://community.optimism.io/docs/developers/build/differences/#using-eth-in-contracts), because of the behavior of the CREATE opcode, it is possible for a user to create a contract on L1 and on L2 that share the same address but have different bytecode.
+- [USDT on Ethereum](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#readContract#F6) - 6 decimals
+- [USDC on Ethereum](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48#readProxyContract#F11) - 6 decimals
+- [USDT on BSC](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955#readContract#F6) - 18 decimals
+- [USDC on BSC](https://bscscan.com/address/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d#readProxyContract#F3) - 18 decimals
 
-This can break trust assumptions, because one contract may be trusted and another be untrusted. To prevent this problem the behavior of the ORIGIN and CALLER opcodes (tx.origin and msg.sender) differs slightly between L1 and L2.
-
-💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
-
-### `tx.origin == msg.sender`
-
-From [Optimism documentation](https://community.optimism.io/docs/developers/build/differences/#pre-eip-155-support):
-
-> On L1 Ethereum tx.origin is equal to msg.sender only when the smart contract was called directly from an externally owned account (EOA). However, on Optimism tx.origin is the origin on Optimism. It could be an EOA. However, in the case of messages from L1, it is possible for a message from a smart contract on L1 to appear on L2 with tx.origin == msg.sender. This is unlikely to make a significant difference, because an L1 smart contract cannot directly manipulate the L2 state. However, there could be edge cases we did not think about where this matters.
-
-💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
-
-### zkSync Era
-
-zkSync Era has many differences from Ethereum on EVM instructions like `CREATE`, `CREATE2`, `CALL`, `STATICCALL`, `DELEGATECALL`, `MSTORE`, `MLOAD`, `CALLDATALOAD,` `CALLDATACOPY`, etc. The full list can checked [here](https://era.zksync.io/docs/dev/building-on-zksync/contracts/differences-with-ethereum.html#evm-instructions) as well as other differences.
-
-💡 Double-check the compatibility of the contracts when being deployed to zkSync Era
+💡 Check that the correct `decimals` are set for the deployed chains if the token values are hardcoded.
 
 ### Contracts Interface
 
@@ -210,6 +204,12 @@ That enabled the possibility of a re-entrancy attack that was exploited and ulti
 Chains have precompiled contracts on different addresses like [Arbitrum](https://developer.arbitrum.io/arbos/precompiles) or [Optimism](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/constants.ts). Care has to be taken if some is used that is not available, works differently or is o a different address.
 
 💡 Double-check the use of precompiled contracts, their addresses, and their compatibility
+
+### zkSync Era
+
+zkSync Era has many differences from Ethereum on EVM instructions like `CREATE`, `CREATE2`, `CALL`, `STATICCALL`, `DELEGATECALL`, `MSTORE`, `MLOAD`, `CALLDATALOAD,` `CALLDATACOPY`, etc. The full list can checked [here](https://era.zksync.io/docs/dev/building-on-zksync/contracts/differences-with-ethereum.html#evm-instructions) as well as other differences.
+
+💡 Double-check the compatibility of the contracts when being deployed to zkSync Era
 
 ---
 
