@@ -157,6 +157,12 @@ From [Optimism documentation](https://community.optimism.io/docs/developers/buil
 
 💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
 
+### zkSync Era
+
+zkSync Era has many differences from Ethereum on EVM instructions like `CREATE`, `CREATE2`, `CALL`, `STATICCALL`, `DELEGATECALL`, `MSTORE`, `MLOAD`, `CALLDATALOAD,` `CALLDATACOPY`, etc. The full list can checked [here](https://era.zksync.io/docs/dev/building-on-zksync/contracts/differences-with-ethereum.html#evm-instructions) as well as other differences.
+
+💡 Double-check the compatibility of the contracts when being deployed to zkSync Era
+
 ### Precompiles
 
 Chains have precompiled contracts on different addresses like [Arbitrum](https://developer.arbitrum.io/arbos/precompiles) or [Optimism](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/constants.ts). Care has to be taken if some is used that is not available, works differently or is o a different address.
