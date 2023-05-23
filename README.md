@@ -182,3 +182,12 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 - [Differences between Ethereum and Base](https://docs.base.org/differences/)
 - [BNB Smart Chain vs Polygon - Comparing the Differences](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
 - [BSC Token Standard Comparison](https://docs.bnbchain.org/docs/migration/evm-chains/token-comparison)
+
+## TODO / Planned
+
+If you'd like to contribute, I would greatly appreciate the following:
+
+- [ ] Add examples from public audits
+- [ ] Add documentation of differences from other chains
+- [ ] Add more observations
+- [ ] Add cases where contracts behave different (like the mentioned decimals on ERC20 tokens, or the token0 and token1 on Uniswap)
