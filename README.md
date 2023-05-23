@@ -191,3 +191,4 @@ If you'd like to contribute, I would greatly appreciate the following:
 - [ ] Add documentation of differences from other chains
 - [ ] Add more observations
 - [ ] Add cases where contracts behave different (like the mentioned decimals on ERC20 tokens, or the token0 and token1 on Uniswap)
+- [ ] Add documentation on how different chains behave for the current observations
