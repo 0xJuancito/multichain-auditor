@@ -8,7 +8,7 @@ If you see some error, or want to add an observation, please create an issue or 
 
 #### 📜 Disclaimer
 
-Take the observations in this repository as a guideline and kickstarter to your findings. Judge the actual impact independently, and please do not use them as a tool to spam audit contests. Do your own research.
+Take the observations in this repository as a guideline and kickstarter to your findings. Judge the actual impact independently, and please **do not use them as a tool to spam audit contests**. Do your own research.
 
 ## Index
 
