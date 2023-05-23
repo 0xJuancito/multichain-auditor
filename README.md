@@ -131,6 +131,12 @@ But it may be [very difficult](https://help.optimism.io/hc/en-us/articles/444437
 
 💡 Verify if a frontrunning attack is possible due to chain constraints or economic viability
 
+### Precompiles
+
+Chains have precompiled contracts on different addresses like [Arbitrum](https://developer.arbitrum.io/arbos/precompiles) or [Optimism](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/constants.ts). Care has to be taken if some is used that is not available, works differently or is o a different address.
+
+💡 Double-check the use of precompiled contracts, their addresses, and their compatibility
+
 ---
 
 ## Differences from Ethereum
