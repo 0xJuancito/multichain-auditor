@@ -121,6 +121,16 @@ To prevent that, it is important that the signed data contains the chain id wher
 
 💡 Check that the data from the signed hash contains the chain id
 
+### Frontrunning
+
+Frontrunning is possible on chains that have a mempool or a way to read proposed transactions before they are executed.
+
+It is possible on some chains like Ethereum, although expensive because of gas costs. It is possible at a cheaper cost on other chains like Polygon. 
+
+But it may be very difficult on chains like Optimism where [the sequencer has no mempool](https://community.optimism.io/docs/protocol/2-rollup-protocol/#optimistic-rollups-tl-dr), as described [here](https://help.optimism.io/hc/en-us/articles/4444375174299-Is-transaction-front-running-possible-on-Optimism-).
+
+💡 Verify if a frontrunning attack is possible due to chain constraints or economic viability
+
 ---
 
 ## Differences from Ethereum
