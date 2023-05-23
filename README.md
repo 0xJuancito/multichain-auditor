@@ -95,6 +95,14 @@ Some ERC20 tokens have different `decimals` on different chains. Even some popul
 
 💡 Check that the correct `decimals` are set for the deployed chains if the token values are hardcoded.
 
+### Contract addresses
+
+Projects sometimes deploy their contracts on the same addresses over different chains but that is not always the case.
+
+Take USDC as an example, whose address in Ethereum is [0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48](https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) and [0x2791bca1f2de4661ed88a30c99a7a9449aa84174](https://polygonscan.com/token/0x2791bca1f2de4661ed88a30c99a7a9449aa84174) on Polygon.
+
+💡 Verify external contract addresses for the chains where the contracts are deployed
+
 ---
 
 ## Differences from Ethereum
