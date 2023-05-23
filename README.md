@@ -109,9 +109,9 @@ In Uniswap and derived AMMs: `token0` is the token with the lower sort order, wh
 
 The order is important because that determines which one is the base token, and which one is the quote token. In other words, if the price is WETH/USDC or USDC/WETH.
 
-This is the case for example on Optimism, where the pair is [WETH/USDC](https://info.uniswap.org/#/optimism/pools/0x85149247691df622eaf1a8bd0cafd40bc45154a9) while on Polygon it is [USDC/WETH](https://info.uniswap.org/#/polygon/pools/0x45dda9cb7c25131df268515131f647d726f50608).
+As contracts may have different addresses on different chains, the token order can change. That is the case for example on Optimism, where the pair is [WETH/USDC](https://info.uniswap.org/#/optimism/pools/0x85149247691df622eaf1a8bd0cafd40bc45154a9) while on Polygon it is [USDC/WETH](https://info.uniswap.org/#/polygon/pools/0x45dda9cb7c25131df268515131f647d726f50608).
 
-💡 Verify that the token orders hold for all chains.
+💡 Verify that the token orders is taking into account, and it is not assumed to be the same on all chains.
 
 ### Signature replay
 
