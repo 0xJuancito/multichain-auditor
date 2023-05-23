@@ -105,7 +105,7 @@ Take USDC as an example, whose address in Ethereum is [0xa0b86991c6218b36c1d19d4
 
 ### AMM pools `token0` and `token1` order
 
-In Uniswap and derived AMMs: `token0` is the token with the lower sort order, while `token1 is the token with the higher sort order, as described on [Uniswap documentation](https://docs.uniswap.org/contracts/v2/reference/smart-contracts/pair#token0). This is valid for both v2 and v3 pools.
+In Uniswap and derived AMMs: `token0` is the token with the lower sort order, while `token1` is the token with the higher sort order, as described on [Uniswap documentation](https://docs.uniswap.org/contracts/v2/reference/smart-contracts/pair#token0). This is valid for both v2 and v3 pools.
 
 The order is important because that determines which one is the base token, and which one is the quote token. In other words, if the price is WETH/USDC or USDC/WETH.
 
