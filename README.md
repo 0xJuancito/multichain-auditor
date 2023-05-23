@@ -113,6 +113,14 @@ This is the case for example on Optimism, where the pair is [WETH/USDC](https://
 
 💡 Verify that the token orders hold for all chains.
 
+### Signature replay
+
+If a contract is deployed on multiple chains and uses signatures, it may be possible to reuse a signature used on one chain and execute the same transaction on another chain.
+
+To prevent that, it is important that the signed data contains the chain id where it should be executed.
+
+💡 Check that the data from the signed hash contains the chain id
+
 ---
 
 ## Differences from Ethereum
