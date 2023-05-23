@@ -43,7 +43,7 @@ For some chains, `block.number` is NOT a reliable source of timing information. 
 
 💡 Look for fixed gas operations like `transfer` or `send`.
 
-### Gas costs
+### Gas fees
 
 Transactions on Ethereum mainnet are much more expensive than on other chains. Chains with very low fees may open the possibility to implement attacks that require a large amount of transactions, or where the cost-benefit of the attack would now be profitable.
 
