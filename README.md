@@ -163,6 +163,16 @@ zkSync Era has many differences from Ethereum on EVM instructions like `CREATE`,
 
 💡 Double-check the compatibility of the contracts when being deployed to zkSync Era
 
+### Contracts may behave differently
+
+Contracts deployed on different chains may behave differently, especially upgradeable ones.
+
+On the XDai chain, USDC, WBTC, and WETH contained post-transfer callback procedures, as opposed to their traditional ERC20 implementations on other chains with no callback.
+
+That enabled the possibility of a re-entrancy attack that was exploited and ultimately [derived on the fork of the chain](https://forum.gnosis.io/t/gip-31-should-gnosis-chain-perform-a-hardfork-to-upgrade-the-token-contract-vulnerable-to-the-reentrancy-attack/4134).
+
+💡 Check that implementations of contracts match on different chains, or that their differences won't incur on any new vulnerability.
+
 ### Precompiles
 
 Chains have precompiled contracts on different addresses like [Arbitrum](https://developer.arbitrum.io/arbos/precompiles) or [Optimism](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/constants.ts). Care has to be taken if some is used that is not available, works differently or is o a different address.
