@@ -192,6 +192,7 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 - [Differences between Ethereum and Base](https://docs.base.org/differences/)
 - [BNB Smart Chain vs Polygon - Comparing the Differences](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
 - [BSC Token Standard Comparison](https://docs.bnbchain.org/docs/migration/evm-chains/token-comparison)
+- [Filecoin EVM: Differences with Ethereum](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/differences-with-ethereum/)
 
 ## TODO / Planned
 
