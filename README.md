@@ -193,6 +193,7 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 - [BNB Smart Chain vs Polygon - Comparing the Differences](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
 - [BSC Token Standard Comparison](https://docs.bnbchain.org/docs/migration/evm-chains/token-comparison)
 - [Filecoin EVM: Differences with Ethereum](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/differences-with-ethereum/)
+- [Differences between Gnosis and Ethereum](https://docs.gnosischain.com/developers/#differences-between-gnosis-and-ethereum)
 
 ## TODO / Planned
 
