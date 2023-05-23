@@ -163,9 +163,15 @@ zkSync Era has many differences from Ethereum on EVM instructions like `CREATE`,
 
 💡 Double-check the compatibility of the contracts when being deployed to zkSync Era
 
+### Upgradability
+
+Some contracts are immutable on a chain but upgradeable on others, like [USDT in Ethereum](https://etherscan.io/token/0xdac17f958d2ee523a2206206994597c13d831ec7#code) vs [USDT in Polygon](https://polygonscan.com/token/0xc2132d05d31c914a87c6611c10748aeb04b58e8f#code).
+
+💡 Double-check the upgradability of contracts on different chains and evaluate their implications.
+
 ### Contracts may behave differently
 
-Contracts deployed on different chains may behave differently, especially upgradeable ones.
+Contracts deployed on different chains may behave differently.
 
 On the XDai chain, USDC, WBTC, and WETH contained post-transfer callback procedures, as opposed to their traditional ERC20 implementations on other chains with no callback.
 
