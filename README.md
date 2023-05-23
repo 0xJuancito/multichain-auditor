@@ -131,6 +131,16 @@ But it may be [very difficult](https://help.optimism.io/hc/en-us/articles/444437
 
 💡 Verify if a frontrunning attack is possible due to chain constraints or economic viability
 
+### Modified Opcodes
+
+Some chains implement opcodes with some modification compared to Ethereum, or are not supported.
+
+Optimism for example, [has a different implementation](https://community.optimism.io/docs/developers/build/differences/#modified-opcodes) of opcodes like `block.coinbase`, `block.difficulty`, `block.basefee`. `tx.origin` may also behave different if the it is an L1 => L2 transaction. It also implements some new opcode [L1BLOCKNUMBER](Chains may also implement new opcodes).
+
+Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-support) in some operations/opcodes like: `blockhash(x)`, `block.coinbase`, `block.difficulty`, `block.number`. `msg.sender` may also behave different for L1 => L2 "retryable ticket" transactions.
+
+💡 Verify that the EVM opcodes and operations used by the protocol are compatible on all chains
+
 ### Precompiles
 
 Chains have precompiled contracts on different addresses like [Arbitrum](https://developer.arbitrum.io/arbos/precompiles) or [Optimism](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/constants.ts). Care has to be taken if some is used that is not available, works differently or is o a different address.
