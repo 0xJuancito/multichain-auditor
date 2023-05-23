@@ -141,6 +141,14 @@ Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-supp
 
 💡 Verify that the EVM opcodes and operations used by the protocol are compatible on all chains
 
+### Address Aliasing - `tx.origin` / `msg.sender`
+
+On some chains like [Optimism](https://community.optimism.io/docs/developers/build/differences/#using-eth-in-contracts), because of the behavior of the CREATE opcode, it is possible for a user to create a contract on L1 and on L2 that share the same address but have different bytecode.
+
+This can break trust assumptions, because one contract may be trusted and another be untrusted. To prevent this problem the behavior of the ORIGIN and CALLER opcodes (tx.origin and msg.sender) differs slightly between L1 and L2.
+
+💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
+
 ### Precompiles
 
 Chains have precompiled contracts on different addresses like [Arbitrum](https://developer.arbitrum.io/arbos/precompiles) or [Optimism](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/constants.ts). Care has to be taken if some is used that is not available, works differently or is o a different address.
