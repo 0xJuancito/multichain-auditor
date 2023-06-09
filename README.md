@@ -256,7 +256,7 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 
 ## EVM Compatible Chains Diff
 
-Check [evm-diff](https://github.com/mds1/evm-diff) repository and the website [evmdiff.com](evmdiff.com) to diff EVM-compatible chains in a friendly format. It's an amazing tool created by [@mds1](https://github.com/mds1)
+Check [evm-diff](https://github.com/mds1/evm-diff) repository and the website [evmdiff.com](https://evmdiff.com) to diff EVM-compatible chains in a friendly format. It's an amazing tool created by [@mds1](https://github.com/mds1)
 
 ## TODO / Planned
 
