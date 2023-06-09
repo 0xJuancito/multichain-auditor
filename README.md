@@ -254,6 +254,10 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 - [Differences between Gnosis and Ethereum](https://docs.gnosischain.com/developers/#differences-between-gnosis-and-ethereum)
 - [Tron TVM: Differences from EVM](https://developers.tron.network/v4.4.0/docs/vm-vs-evm#Differences%20from%20EVM)
 
+## EVM Compatible Chains Diff
+
+Check [evm-diff](https://github.com/mds1/evm-diff) repository and the website [evmdiff.com](evmdiff.com) to diff EVM-compatible chains in a friendly format. It's an amazing tool created by [@mds1](https://github.com/mds1)
+
 ## TODO / Planned
 
 If you'd like to contribute, I would greatly appreciate the following:
