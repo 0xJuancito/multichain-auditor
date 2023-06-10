@@ -57,7 +57,7 @@ For some chains, `block.number` is NOT a reliable source of timing information. 
 
 💡 Look for the use of `block.number` as a time reference, especially on L2.
 
-📝 [1](https://github.com/code-423n4/2022-12-tigris-findings/issues/419)
+📝 [1](https://github.com/code-423n4/2022-12-tigris-findings/issues/419) [2](https://github.com/code-423n4/2022-12-tigris-findings/issues/67)
 
 ### L2 Sequencer Uptime Feeds in Chainlink
 
