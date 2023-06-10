@@ -150,6 +150,8 @@ Although cheaper, each case should be analyzed to check if it is economically vi
 
 💡 Analyze attack vectors that require low gas fees or where a considerable numbers of transactions have to be executed
 
+📝 [1](https://github.com/sherlock-audit/2023-02-surge-judging/issues/109)
+
 ### Signature replay acroos chains
 
 If a contract is deployed on multiple chains and uses signatures, it may be possible to reuse a signature used on one chain and execute the same transaction on another chain.
