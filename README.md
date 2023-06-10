@@ -148,13 +148,15 @@ Although cheaper, each case should be analyzed to check if it is economically vi
 
 💡 Analyze attack vectors that require low gas fees or where a considerable numbers of transactions have to be executed
 
-### Signature replay
+### Signature replay acroos chains
 
 If a contract is deployed on multiple chains and uses signatures, it may be possible to reuse a signature used on one chain and execute the same transaction on another chain.
 
 To prevent that, it is important that the signed data contains the chain id where it should be executed.
 
 💡 Check that the data from the signed hash contains the chain id
+
+📝 [1](https://github.com/code-423n4/2022-06-connext-findings/issues/144) [2](https://solodit.xyz/issues/7234) 
 
 ### Frontrunning
 
