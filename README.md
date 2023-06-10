@@ -71,6 +71,8 @@ Mitigations can be found on [Handling Arbitrum outages](https://docs.chain.link/
 
 💡 Check if the projects handles the scenarios where a sequencer is down on optimistic rollup protocols.
 
+📝 [1](https://solodit.xyz/issues/6689) [2](https://solodit.xyz/issues/6274) [3](https://solodit.xyz/issues/3545)
+
 ### Chainlink Price Feeds
 
 > Chainlink Data Feeds provide data that is aggregated from many data sources by a decentralized set of independent node operators.
