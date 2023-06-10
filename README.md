@@ -239,6 +239,14 @@ Chains have precompiled contracts on different addresses like [Arbitrum](https:/
 
 💡 Double-check the use of precompiled contracts, their addresses, and their compatibility
 
+### Cross-chain message vulnerabilities
+
+Some protocols work by sending cross-chain messages to their counterpart contracts on the other chains. This can lead to vulnerabilities like authorization issues, or issues with relayers.
+
+💡 Look for cross-chain messages implementations and verify the correct permissions and functionality considering all the actors involved
+
+📝 [1](https://github.com/sherlock-audit/2023-01-derby-judging/issues/309) [2](https://github.com/sherlock-audit/2023-01-derby-judging/issues/325)
+
 ### zkSync Era
 
 zkSync Era has many differences from Ethereum on EVM instructions like `CREATE`, `CREATE2`, `CALL`, `STATICCALL`, `DELEGATECALL`, `MSTORE`, `MLOAD`, `CALLDATALOAD,` `CALLDATACOPY`, etc. The full list can be checked [here](https://era.zksync.io/docs/dev/building-on-zksync/contracts/differences-with-ethereum.html#evm-instructions) as well as other differences.
