@@ -178,6 +178,8 @@ Take WETH as an example. Its address on Ethereum is [0xC02aaA39b223FE8D0A0e5C4F2
 
 💡 Verify external contract addresses for the chains where the contracts are deployed
 
+📝 [1](https://github.com/sherlock-audit/2023-01-derby-judging/issues/308)
+
 ### ERC20 decimals
 
 Some ERC20 tokens have different `decimals` on different chains. Even some popular ones like USDT and USDC have 6 decimals on Ethereum, and 18 decimals on BSC for example:
