@@ -71,7 +71,7 @@ Mitigations can be found on [Handling Arbitrum outages](https://docs.chain.link/
 
 💡 Check if the projects handles the scenarios where a sequencer is down on optimistic rollup protocols.
 
-📝 [1](https://solodit.xyz/issues/6689) [2](https://solodit.xyz/issues/6274) [3](https://solodit.xyz/issues/3545)
+📝 [1](https://github.com/sherlock-audit/2023-02-bond-judging/issues/1) [2](https://github.com/sherlock-audit/2023-01-sentiment-judging/issues/16) [3](https://github.com/sherlock-audit/2022-11-sentiment-judging/issues/3) [4](https://github.com/sherlock-audit/2023-04-jojo-judging/issues/101)
 
 ### Chainlink Price Feeds
 
