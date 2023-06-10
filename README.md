@@ -158,7 +158,7 @@ To prevent that, it is important that the signed data contains the chain id wher
 
 💡 Check that the data from the signed hash contains the chain id
 
-📝 [1](https://github.com/code-423n4/2022-06-connext-findings/issues/144) [2](https://solodit.xyz/issues/7234) 
+📝 [1](https://github.com/code-423n4/2022-06-connext-findings/issues/144) [2](https://solodit.xyz/issues/7234) [3](https://solodit.xyz/issues/16276)
 
 ### Frontrunning
 
