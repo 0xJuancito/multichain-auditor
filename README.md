@@ -49,7 +49,7 @@ Example:
 uint256 auctionDuration = 7200; // Auction duration lasts for one day (5 * 60 * 24 = 7200)
 ```
 
-💡 Look for harcoded time values dependent on the `block.number` that may only be valid on Mainnet.
+💡 Look for hardcoded time values dependent on the `block.number` that may only be valid on Mainnet.
 
 ### Block production may not be constant
 
@@ -113,11 +113,11 @@ Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-supp
 
 ### Address Aliasing - `tx.origin` / `msg.sender`
 
-On some chains like [Optimism](https://community.optimism.io/docs/developers/build/differences/#using-eth-in-contracts), because of the behavior of the CREATE opcode, it is possible for a user to create a contract on L1 and on L2 that share the same address but have different bytecode.
+On some chains like [Optimism](https://community.optimism.io/docs/developers/build/differences/#using-eth-in-contracts), because of the behaviour of the CREATE opcode, it is possible for a user to create a contract on L1 and on L2 that share the same address but have different bytecode.
 
-This can break trust assumptions, because one contract may be trusted and another be untrusted. To prevent this problem the behavior of the ORIGIN and CALLER opcodes (tx.origin and msg.sender) differs slightly between L1 and L2.
+This can break trust assumptions, because one contract may be trusted and another be untrusted. To prevent this problem the behaviour of the ORIGIN and CALLER opcodes (tx.origin and msg.sender) differs slightly between L1 and L2.
 
-💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
+💡 Verify that the expected behaviour of `tx.origin` and `msg.sender` holds on all deployed chains
 
 ### `tx.origin == msg.sender`
 
@@ -143,8 +143,8 @@ Examples:
 - DOS by filling bound arrays
 - Spamming that can incur in extra processing costs for the protocol
 - An attack that only drains smaller amounts of wei that wouldn't be profitable with high gas fees
-- Frontrunning operations to prevent txs to be executed during a time frame (liquidations, complete auctions, etc.)
-- Griefing attacks against the protocol
+- Frontrunning operations to prevent txns to be executed during a time frame (liquidations, complete auctions, etc.)
+- Greifing attacks against the protocol
 
 Although cheaper, each case should be analyzed to check if it is economically viable to actually be considered an attack.
 
@@ -152,7 +152,7 @@ Although cheaper, each case should be analyzed to check if it is economically vi
 
 📝 [1](https://github.com/sherlock-audit/2023-02-surge-judging/issues/109)
 
-### Signature replay acroos chains
+### Signature replay across chains
 
 If a contract is deployed on multiple chains and uses signatures, it may be possible to reuse a signature used on one chain and execute the same transaction on another chain.
 
