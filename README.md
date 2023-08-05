@@ -93,7 +93,7 @@ The order is important because that determines which one is the base token, and 
 
 As contracts may have different addresses on different chains, the token order can change. That is the case for example on Optimism, where the pair is [WETH/USDC](https://info.uniswap.org/#/optimism/pools/0x85149247691df622eaf1a8bd0cafd40bc45154a9) while on Polygon it is [USDC/WETH](https://info.uniswap.org/#/polygon/pools/0x45dda9cb7c25131df268515131f647d726f50608).
 
-💡 Verify that the token orders is taking into account, and it is not assumed to be the same on all chains.
+💡 Verify that the token orders are taken into account, and it is not assumed to be the same on all chains.
 
 ### Modified Opcodes
 
@@ -144,7 +144,7 @@ Examples:
 - Spamming that can incur in extra processing costs for the protocol
 - An attack that only drains smaller amounts of wei that wouldn't be profitable with high gas fees
 - Frontrunning operations to prevent txns to be executed during a time frame (liquidations, complete auctions, etc.)
-- Greifing attacks against the protocol
+- Griefing attacks against the protocol
 
 Although cheaper, each case should be analyzed to check if it is economically viable to actually be considered an attack.
 
