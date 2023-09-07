@@ -183,16 +183,6 @@ Although cheaper, each case should be analyzed to check if it is economically vi
 
 📝 [1](https://github.com/sherlock-audit/2023-02-surge-judging/issues/109)
 
-### Signature replay across chains
-
-If a contract is deployed on multiple chains and uses signatures, it may be possible to reuse a signature used on one chain and execute the same transaction on another chain.
-
-To prevent that, it is important that the signed data contains the chain id where it should be executed.
-
-💡 Check that the data from the signed hash contains the chain id
-
-📝 [1](https://github.com/code-423n4/2022-06-connext-findings/issues/144) [2](https://solodit.xyz/issues/7234) [3](https://solodit.xyz/issues/16276)
-
 ### Frontrunning
 
 Frontrunning is possible on chains that have a mempool or a way to read proposed transactions before they are executed.
@@ -202,6 +192,16 @@ It is possible on some chains like Ethereum, although expensive because of gas c
 But it may be [very difficult](https://help.optimism.io/hc/en-us/articles/4444375174299-Is-transaction-front-running-possible-on-Optimism-) on chains like Optimism [with a private mempool](https://community.optimism.io/docs/developers/bedrock/differences/#mempool)
 
 💡 Verify if a frontrunning attack is possible due to chain constraints or economic viability
+
+### Signature replay across chains
+
+If a contract is deployed on multiple chains and uses signatures, it may be possible to reuse a signature used on one chain and execute the same transaction on another chain.
+
+To prevent that, it is important that the signed data contains the chain id where it should be executed.
+
+💡 Check that the data from the signed hash contains the chain id
+
+📝 [1](https://github.com/code-423n4/2022-06-connext-findings/issues/144) [2](https://solodit.xyz/issues/7234) [3](https://solodit.xyz/issues/16276)
 
 ### Hardcoded Contract Addresses
 
