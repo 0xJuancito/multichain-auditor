@@ -150,12 +150,6 @@ From [Optimism documentation](https://community.optimism.io/docs/developers/buil
 
 💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
 
-### `transfer`, `send` and fixed gas operations
-
-`transfer` and `send` forward a hardcoded amount of gas and are [discouraged as gas costs can change](https://consensys.net/diligence/blog/2019/09/stop-using-soliditys-transfer-now/). On certain chains that cost can be higher than in Mainnet, and can result in issues, like in [zkSync Era](https://twitter.com/zksync/status/1644139364270878720).
-
-💡 Look for fixed gas operations like `transfer` or `send`.
-
 ### Cross-chain message vulnerabilities
 
 Some protocols work by sending cross-chain messages to their counterpart contracts on the other chains. This can lead to vulnerabilities like authorization issues, or issues with relayers.
@@ -163,6 +157,12 @@ Some protocols work by sending cross-chain messages to their counterpart contrac
 💡 Look for cross-chain messages implementations and verify the correct permissions and functionality considering all the actors involved
 
 📝 [1](https://github.com/code-423n4/2022-12-pooltogether-findings/issues/60) [2](https://github.com/sherlock-audit/2023-01-derby-judging/issues/309) [3](https://github.com/sherlock-audit/2023-01-derby-judging/issues/325)
+
+### `transfer`, `send` and fixed gas operations
+
+`transfer` and `send` forward a hardcoded amount of gas and are [discouraged as gas costs can change](https://consensys.net/diligence/blog/2019/09/stop-using-soliditys-transfer-now/). On certain chains that cost can be higher than in Mainnet, and can result in issues, like in [zkSync Era](https://twitter.com/zksync/status/1644139364270878720).
+
+💡 Look for fixed gas operations like `transfer` or `send`.
 
 ### Gas fees
 
