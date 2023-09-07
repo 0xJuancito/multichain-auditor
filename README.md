@@ -74,9 +74,25 @@ From [Chainlink documentation](https://docs.chain.link/data-feeds/l2-sequencer-f
 
 This means that if the project does not check if the sequencer is down, it can return stale results.
 
+[Optimism Goerli Uptime Feed](https://goerli-optimism.etherscan.io/address/0x4C4814aa04433e0FB31310379a4D6946D5e1D353#readContract#F10)
+
 Mitigations can be found on [Handling Arbitrum outages](https://docs.chain.link/data-feeds/l2-sequencer-feeds#handling-arbitrum-outages) and [Handling outages on Optimism and Metis](https://docs.chain.link/data-feeds/l2-sequencer-feeds#handling-outages-on-optimism-and-metis).
 
-[Optimism Goerli Uptime Feed](https://goerli-optimism.etherscan.io/address/0x4C4814aa04433e0FB31310379a4D6946D5e1D353#readContract#F10)
+Example:
+
+```solidity
+function getPrice(address token) external view override returns (uint) {
+    if (!isSequencerActive()) revert Errors.L2SequencerUnavailable();
+    ...
+}
+
+function isSequencerActive() internal view returns (bool) {
+    (, int256 answer, uint256 startedAt,,) = sequencer.latestRoundData();
+    if (block.timestamp - startedAt <= GRACE_PERIOD_TIME || answer == 1)
+        return false;
+    return true;
+}
+```
 
 💡 Check if the projects handles the scenarios where a sequencer is down on optimistic rollup protocols.
 
