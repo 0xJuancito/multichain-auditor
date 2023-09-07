@@ -52,13 +52,15 @@ uint256 auctionDuration = 7200; // Auction duration lasts for one day (5 * 60 * 
 Example: [OZ Wizard](https://wizard.openzeppelin.com/#governor)
 
 💡 Look for hardcoded time values dependent on the `block.number` that may only be valid on Mainnet.
-💡 Block time may change on the same chain [over time](https://etherscan.io/chart/blocktime).
 
 ### Block production may not be constant
 
-For some chains, `block.number` is NOT a reliable source of timing information. Especially in L2 like [Optimism](https://community.optimism.io/docs/developers/build/differences/#block-production-is-not-constant) for example.
+`block.number` is NOT a reliable source of timing information for short terms.
+
+On [Arbitrum](https://docs.arbitrum.io/time#ethereum-block-numbers-within-arbitrum) it reflects the L1 block number, which is updated once per minute
 
 💡 Look for the use of `block.number` as a time reference, especially on L2.
+💡 Block time may change on the same chain [over time](https://etherscan.io/chart/blocktime).
 
 📝 [1](https://github.com/code-423n4/2022-12-tigris-findings/issues/419) [2](https://github.com/code-423n4/2022-12-tigris-findings/issues/67)
 
