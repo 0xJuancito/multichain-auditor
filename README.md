@@ -49,6 +49,8 @@ Example:
 uint256 auctionDuration = 7200; // Auction duration lasts for one day (5 * 60 * 24 = 7200)
 ```
 
+Example: [OZ Wizard](https://wizard.openzeppelin.com/#governor)
+
 💡 Look for hardcoded time values dependent on the `block.number` that may only be valid on Mainnet.
 💡 Block time may change on the same chain [over time](https://etherscan.io/chart/blocktime).
 
