@@ -156,6 +156,14 @@ From [Optimism documentation](https://community.optimism.io/docs/developers/buil
 
 💡 Look for fixed gas operations like `transfer` or `send`.
 
+### Cross-chain message vulnerabilities
+
+Some protocols work by sending cross-chain messages to their counterpart contracts on the other chains. This can lead to vulnerabilities like authorization issues, or issues with relayers.
+
+💡 Look for cross-chain messages implementations and verify the correct permissions and functionality considering all the actors involved
+
+📝 [1](https://github.com/code-423n4/2022-12-pooltogether-findings/issues/60) [2](https://github.com/sherlock-audit/2023-01-derby-judging/issues/309) [3](https://github.com/sherlock-audit/2023-01-derby-judging/issues/325)
+
 ### Gas fees
 
 Transactions on Ethereum mainnet are much more expensive than on other chains. Chains with very low fees may open the possibility to implement attacks that require a large amount of transactions, or where the cost-benefit of the attack would now be profitable.
@@ -263,14 +271,6 @@ That enabled the possibility of a re-entrancy attack that was exploited and ulti
 Chains have precompiled contracts on different addresses like [Arbitrum](https://developer.arbitrum.io/arbos/precompiles) or [Optimism](https://github.com/ethereum-optimism/optimism/blob/develop/specs/predeploys.md). Care has to be taken if some is used that is not available, works differently or is on a different address.
 
 💡 Double-check the use of precompiled contracts, their addresses, and their compatibility
-
-### Cross-chain message vulnerabilities
-
-Some protocols work by sending cross-chain messages to their counterpart contracts on the other chains. This can lead to vulnerabilities like authorization issues, or issues with relayers.
-
-💡 Look for cross-chain messages implementations and verify the correct permissions and functionality considering all the actors involved
-
-📝 [1](https://github.com/code-423n4/2022-12-pooltogether-findings/issues/60) [2](https://github.com/sherlock-audit/2023-01-derby-judging/issues/309) [3](https://github.com/sherlock-audit/2023-01-derby-judging/issues/325)
 
 ### zkSync Era
 
