@@ -252,7 +252,7 @@ Some protocols work by sending cross-chain messages to their counterpart contrac
 
 💡 Look for cross-chain messages implementations and verify the correct permissions and functionality considering all the actors involved
 
-📝 [1](https://github.com/sherlock-audit/2023-01-derby-judging/issues/309) [2](https://github.com/sherlock-audit/2023-01-derby-judging/issues/325)
+📝 [1](https://github.com/code-423n4/2022-12-pooltogether-findings/issues/60) [2](https://github.com/sherlock-audit/2023-01-derby-judging/issues/309) [3](https://github.com/sherlock-audit/2023-01-derby-judging/issues/325)
 
 ### zkSync Era
 
