@@ -76,6 +76,8 @@ This means that if the project does not check if the sequencer is down, it can r
 
 Mitigations can be found on [Handling Arbitrum outages](https://docs.chain.link/data-feeds/l2-sequencer-feeds#handling-arbitrum-outages) and [Handling outages on Optimism and Metis](https://docs.chain.link/data-feeds/l2-sequencer-feeds#handling-outages-on-optimism-and-metis).
 
+[Optimism Goerli Uptime Feed](https://goerli-optimism.etherscan.io/address/0x4C4814aa04433e0FB31310379a4D6946D5e1D353#readContract#F10)
+
 💡 Check if the projects handles the scenarios where a sequencer is down on optimistic rollup protocols.
 
 📝 [1](https://github.com/sherlock-audit/2023-02-bond-judging/issues/1) [2](https://github.com/sherlock-audit/2023-01-sentiment-judging/issues/16) [3](https://github.com/sherlock-audit/2022-11-sentiment-judging/issues/3) [4](https://github.com/sherlock-audit/2023-04-jojo-judging/issues/101) [5](https://github.com/code-423n4/2022-09-y2k-finance-findings/issues/278)
