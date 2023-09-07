@@ -256,6 +256,8 @@ Some ERC20 tokens have different `decimals` on different chains. Even some popul
 - [USDT on BSC](https://bscscan.com/address/0x55d398326f99059ff775485246999027b3197955#readContract#F6) - 18 decimals
 - [USDC on BSC](https://bscscan.com/address/0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d#readProxyContract#F3) - 18 decimals
 
+A more exhaustive list can be found in the [tokens-decimals](https://github.com/magnetto90/tokens-decimals) repository by [@magnetto90](https://github.com/magnetto90).
+
 💡 Check that the correct `decimals` are set for the deployed chains if the token values are hardcoded.
 
 ### Contracts Interface
