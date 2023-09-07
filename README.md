@@ -199,6 +199,40 @@ If a contract is deployed on multiple chains and uses signatures, it may be poss
 
 To prevent that, it is important that the signed data contains the chain id where it should be executed.
 
+Example from [UniswapV2](https://github.com/Uniswap/v2-core/blob/master/contracts/UniswapV2ERC20.sol#L34):
+
+```solidity
+constructor() public {
+    uint chainId;
+    assembly {
+        chainId := chainid
+    }
+    DOMAIN_SEPARATOR = keccak256(
+        abi.encode(
+            keccak256('EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)'),
+            keccak256(bytes(name)),
+            keccak256(bytes('1')),
+@>          chainId,                   // @audit
+            address(this)
+        )
+    );
+}
+
+function permit(address owner, address spender, uint value, uint deadline, uint8 v, bytes32 r, bytes32 s) external {
+    require(deadline >= block.timestamp, 'UniswapV2: EXPIRED');
+    bytes32 digest = keccak256(
+        abi.encodePacked(
+            '\x19\x01',
+@>          DOMAIN_SEPARATOR, // @audit
+            keccak256(abi.encode(PERMIT_TYPEHASH, owner, spender, value, nonces[owner]++, deadline))
+        )
+    );
+    address recoveredAddress = ecrecover(digest, v, r, s);
+    require(recoveredAddress != address(0) && recoveredAddress == owner, 'UniswapV2: INVALID_SIGNATURE');
+    _approve(owner, spender, value);
+}
+```
+
 💡 Check that the data from the signed hash contains the chain id
 
 📝 [1](https://github.com/code-423n4/2022-06-connext-findings/issues/144) [2](https://solodit.xyz/issues/7234) [3](https://solodit.xyz/issues/16276)
