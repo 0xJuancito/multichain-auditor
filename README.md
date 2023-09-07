@@ -57,7 +57,7 @@ Example: [OZ Wizard](https://wizard.openzeppelin.com/#governor)
 
 `block.number` is NOT a reliable source of timing information for short terms.
 
-On [Arbitrum](https://docs.arbitrum.io/time#ethereum-block-numbers-within-arbitrum) it reflects the L1 block number, which is updated once per minute
+On [Arbitrum](https://docs.arbitrum.io/time#example) it reflects the L1 block number, which is updated once per minute
 
 💡 Look for the use of `block.number` as a time reference, especially on L2.
 💡 Block time may change on the same chain [over time](https://etherscan.io/chart/blocktime).
