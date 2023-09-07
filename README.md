@@ -266,6 +266,7 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 
 - [Arbitrum/Ethereum Differences](https://developer.arbitrum.io/arbitrum-ethereum-differences)
 - [Differences between Ethereum and Optimism](https://community.optimism.io/docs/developers/build/differences/)
+- [Bedrock Differences](https://community.optimism.io/docs/developers/bedrock/differences/)
 - [zkSync Era: Differences from Ethereum](https://era.zksync.io/docs/dev/building-on-zksync/contracts/differences-with-ethereum.html)
 - [Differences Between Moonbeam and Ethereum](https://docs.moonbeam.network/learn/features/eth-compatibility/)
 - [Differences between Ethereum and Base](https://docs.base.org/differences/)
