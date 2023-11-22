@@ -11,7 +11,7 @@
 ## Precompiles
 
 | Address       | Name          | Description  |
-|:-------------:|:-------------:| :-----:|
+|:-------------:|:-------------| :-----|
 | `0x01`        | ecRecover | Elliptic curve digital signature algorithm (ECDSA) public key recovery function |
 | `0x02`        | SHA2-256  | Hash function |
 | `0x03`        | RIPEMD-160| Hash function |
@@ -21,7 +21,7 @@
 | `0x07`        | ecMul | Scalar multiplication (MUL) on the elliptic curve 'alt_bn128' |
 | `0x08`        | ecPairing | Bilinear function on groups on the elliptic curve 'alt_bn128' |
 | `0x09`        | blake2f | Compression function F used in the BLAKE2 cryptographic hashing algorithm |
-| `0x0A`        | zkPointEvaluation | Point evaluation for zk-rollups [Ref](https://eips.ethereum.org/EIPS/eip-4844#point-evaluation-precompile) |
+| `0x0A`        | zkPointEvaluation | Point evaluation for zk-rollups ([EIP-4844](https://eips.ethereum.org/EIPS/eip-4844#point-evaluation-precompile)) |
 
 ###### Sources
 
