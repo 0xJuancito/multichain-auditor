@@ -130,9 +130,11 @@ Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-supp
 
 ### Support for the `push0` opcode
 
-`push0` is an instruction which pushes the constant value 0 onto the stack. This opcode is still not supported by many chains, like [Arbitrum](https://developer.arbitrum.io/solidity-support#Differences%20from%20Solidity%20on%20Ethereum) and might be problematic for projects compiled with a version of Solidity `>= 0.8.20` (when it was introduced).
+`push0` is an instruction which pushes the constant value 0 onto the stack. This opcode is still not supported by many chains and might be problematic for projects compiled with a version of Solidity `>= 0.8.20` (when it was introduced).
 
 💡 Pay attention to projects using a Solidity version `>= 0.8.20` and check if it is supported on the deployed chains.
+
+ℹ️ Arbitrum added support in [ArbOS 11](https://docs.arbitrum.io/for-devs/concepts/differences-between-arbitrum-ethereum/solidity-support) and Optimism introduced support for it on the [Canyon Upgrade](https://blog.oplabs.co/canyon-hardfork/) .
 
 ### Address Aliasing - `tx.origin` / `msg.sender`
 
