@@ -326,6 +326,7 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 - [Differences between Ethereum and Optimism](https://community.optimism.io/docs/developers/build/differences/)
 - [Bedrock Differences](https://community.optimism.io/docs/developers/bedrock/differences/)
 - [zkSync Era: Differences from Ethereum](https://era.zksync.io/docs/dev/building-on-zksync/contracts/differences-with-ethereum.html)
+- [Differences between Ethereum and Linea](https://docs.linea.build/build-on-linea/ethereum-differences)
 - [Differences Between Moonbeam and Ethereum](https://docs.moonbeam.network/learn/features/eth-compatibility/)
 - [Differences between Ethereum and Base](https://docs.base.org/differences/)
 - [BNB Smart Chain vs Polygon - Comparing the Differences](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
