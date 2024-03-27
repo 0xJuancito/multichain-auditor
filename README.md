@@ -328,6 +328,7 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 - [zkSync Era: Differences from Ethereum](https://era.zksync.io/docs/dev/building-on-zksync/contracts/differences-with-ethereum.html)
 - [Differences Between Moonbeam and Ethereum](https://docs.moonbeam.network/learn/features/eth-compatibility/)
 - [Differences between Ethereum and Base](https://docs.base.org/differences/)
+- [Differences between Ethereum and Celo](https://docs.celo.org/developer/migrate/from-ethereum#:~:text=Key%20differences%20between%20Celo%20and%20Ethereum%E2%80%8B&text=Celo%20allows%20users%20to%20pay,pay%20transaction%20fees%20in%20Ether)
 - [BNB Smart Chain vs Polygon - Comparing the Differences](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
 - [BSC Token Standard Comparison](https://docs.bnbchain.org/docs/migration/evm-chains/token-comparison)
 - [Filecoin EVM: Differences with Ethereum](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/differences-with-ethereum/)
