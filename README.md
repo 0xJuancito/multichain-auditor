@@ -333,7 +333,7 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 - [BNB Smart Chain vs Polygon - Comparing the Differences](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
 - [BSC Token Standard Comparison](https://docs.bnbchain.org/docs/migration/evm-chains/token-comparison)
 - [Filecoin EVM: Differences with Ethereum](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/differences-with-ethereum/)
-- [Differences between Gnosis and Ethereum](https://docs.gnosischain.com/developers/#differences-between-gnosis-and-ethereum)
+- [Differences between Gnosis and Ethereum](https://docs.gnosischain.com/about/specs/hard-forks/dencun#differences-with-ethereum-mainnet)
 - [Tron TVM: Differences from EVM](https://developers.tron.network/v4.4.0/docs/vm-vs-evm#Differences%20from%20EVM)
 
 ## EVM Compatible Chains Diff
