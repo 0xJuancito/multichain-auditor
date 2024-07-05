@@ -34,7 +34,6 @@ Take the observations in this repository as a guideline and kickstarter to your 
   - [Precompiles](#precompiles)
   - [zkSync Era](#zksync-era)
 - [Differences from Ethereum](#differences-from-ethereum)
-- [TODO / Planned](#todo--planned)
 
 ## General Observations
 
