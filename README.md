@@ -339,13 +339,3 @@ Some blockchains have articles explaining their differences with Ethereum or oth
 ## EVM Compatible Chains Diff
 
 Check [evm-diff](https://github.com/mds1/evm-diff) repository and the website [evmdiff.com](https://evmdiff.com) to diff EVM-compatible chains in a friendly format. It's an amazing tool created by [@mds1](https://github.com/mds1)
-
-## TODO / Planned
-
-If you'd like to contribute, I would greatly appreciate the following:
-
-- [ ] Add examples from public audits
-- [ ] Add documentation of differences from other chains
-- [ ] Add more observations
-- [ ] Add cases where contracts behave different (like the mentioned decimals on ERC20 tokens, or the token0 and token1 on Uniswap)
-- [ ] Add documentation on how different chains behave for the current observations
