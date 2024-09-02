@@ -311,7 +311,7 @@ Chains have precompiled contracts on different addresses like [Arbitrum](https:/
 
 ### zkSync Era
 
-zkSync Era has many differences from Ethereum on EVM instructions like `CREATE`, `CREATE2`, `CALL`, `STATICCALL`, `DELEGATECALL`, `MSTORE`, `MLOAD`, `CALLDATALOAD,` `CALLDATACOPY`, etc. The full list can be checked [here](https://era.zksync.io/docs/dev/building-on-zksync/contracts/differences-with-ethereum.html#evm-instructions) as well as other differences.
+zkSync Era has many differences from Ethereum on EVM instructions like `CREATE`, `CREATE2`, `CALL`, `STATICCALL`, `DELEGATECALL`, `MSTORE`, `MLOAD`, `CALLDATALOAD,` `CALLDATACOPY`, etc.
 
 💡 Double-check the compatibility of the contracts when being deployed to zkSync Era
 
