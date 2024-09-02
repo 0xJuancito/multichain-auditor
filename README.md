@@ -321,19 +321,18 @@ zkSync Era has many differences from Ethereum on EVM instructions like `CREATE`,
 
 Some blockchains have articles explaining their differences with Ethereum or other EVM chains. Here's a list of official docs:
 
-- [Arbitrum/Ethereum Differences](https://developer.arbitrum.io/arbitrum-ethereum-differences)
-- [Differences between Ethereum and Optimism](https://community.optimism.io/docs/developers/build/differences/)
-- [Bedrock Differences](https://community.optimism.io/docs/developers/bedrock/differences/)
-- [zkSync Era: Differences from Ethereum](https://era.zksync.io/docs/dev/building-on-zksync/contracts/differences-with-ethereum.html)
-- [Differences between Ethereum and Linea](https://docs.linea.build/build-on-linea/ethereum-differences)
-- [Differences Between Moonbeam and Ethereum](https://docs.moonbeam.network/learn/features/eth-compatibility/)
-- [Differences between Ethereum and Base](https://docs.base.org/differences/)
-- [Differences between Ethereum and Celo](https://docs.celo.org/developer/migrate/from-ethereum#:~:text=Key%20differences%20between%20Celo%20and%20Ethereum%E2%80%8B&text=Celo%20allows%20users%20to%20pay,pay%20transaction%20fees%20in%20Ether)
-- [BNB Smart Chain vs Polygon - Comparing the Differences](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
+- [Arbitrum vs Ethereum](https://developer.arbitrum.io/arbitrum-ethereum-differences)
+- [Optimism vs Ethereum](https://docs.optimism.io/chain/differences)
+- [zkSync Era vs Ethereum](https://era.zksync.io/docs/dev/building-on-zksync/contracts/differences-with-ethereum.html)
+- [Linea vs Ethereum](https://docs.linea.build/build-on-linea/ethereum-differences)
+- [Moonbeam vs Ethereum](https://docs.moonbeam.network/learn/features/eth-compatibility/)
+- [Base vs Ethereum](https://docs.base.org/differences/)
+- [Celo vs Ethereum](https://docs.celo.org/developer/migrate/from-ethereum#:~:text=Key%20differences%20between%20Celo%20and%20Ethereum%E2%80%8B&text=Celo%20allows%20users%20to%20pay,pay%20transaction%20fees%20in%20Ether)
+- [BNB Smart Chain vs Polygon](https://docs.bnbchain.org/docs/migration/evm-chains/chain-comparison)
 - [BSC Token Standard Comparison](https://docs.bnbchain.org/docs/migration/evm-chains/token-comparison)
-- [Filecoin EVM: Differences with Ethereum](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/differences-with-ethereum/)
-- [Differences between Gnosis and Ethereum](https://docs.gnosischain.com/about/specs/hard-forks/dencun#differences-with-ethereum-mainnet)
-- [Tron TVM: Differences from EVM](https://developers.tron.network/v4.4.0/docs/vm-vs-evm#Differences%20from%20EVM)
+- [Filecoin vs Ethereum](https://docs.filecoin.io/smart-contracts/filecoin-evm-runtime/differences-with-ethereum/)
+- [Gnosis vs Ethereum](https://docs.gnosischain.com/about/specs/hard-forks/dencun#differences-with-ethereum-mainnet)
+- [Tron vs Ethereum](https://developers.tron.network/v4.4.0/docs/vm-vs-evm#Differences%20from%20EVM)
 
 ## EVM Compatible Chains Diff
 
