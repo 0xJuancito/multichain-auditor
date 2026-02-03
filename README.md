@@ -123,7 +123,7 @@ Some chains implement opcodes with some modification compared to Ethereum, or ar
 
 Optimism for example, [has a different implementation](https://community.optimism.io/docs/developers/build/differences/#modified-opcodes) of opcodes like `block.coinbase`, `block.difficulty`, `block.basefee`. `tx.origin` may also behave different if the it is an L1 => L2 transaction. It also implements some new opcode [L1BLOCKNUMBER](Chains may also implement new opcodes).
 
-Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-support) in some operations/opcodes like: `blockhash(x)`, `block.coinbase`, `block.difficulty`, `block.number`. `msg.sender` may also behave different for L1 => L2 "retryable ticket" transactions.
+Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-support) in some operations/opcodes like: `blockhash(x)`, `block.coinbase`, `block.difficulty`, `block.number`. `msg.sender` may also behave differently for L1 => L2 "retryable ticket" transactions.
 
 💡 Verify that the EVM opcodes and operations used by the protocol are compatible on all chains
 
