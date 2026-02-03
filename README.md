@@ -25,7 +25,7 @@ Take the observations in this repository as a guideline and kickstarter to your 
   - [transfer, send and fixed gas operations](#txorigin--msgsender)
   - [Gas fees](#gas-fees)
   - [Frontrunning](#frontrunning)
-  - [Signature replay](#signature-replay)
+  - [Signature replay across chains](#signature-replay-across-chains)
   - [Hardcoded Contract Addresses](#hardcoded-contract-addresses)
   - [ERC20 decimals](#erc20-decimals)
   - [Contracts Interface](#contracts-interface)
