@@ -121,7 +121,7 @@ As contracts may have different addresses on different chains, the token order c
 
 Some chains implement opcodes with some modification compared to Ethereum, or are not supported.
 
-Optimism for example, [has a different implementation](https://community.optimism.io/docs/developers/build/differences/#modified-opcodes) of opcodes like `block.coinbase`, `block.difficulty`, `block.basefee`. `tx.origin` may also behave different if the it is an L1 => L2 transaction. It also implements some new opcode [L1BLOCKNUMBER](Chains may also implement new opcodes).
+Optimism for example, [has a different implementation](https://community.optimism.io/docs/developers/build/differences/#modified-opcodes) of opcodes like `block.coinbase`, `block.difficulty`, `block.basefee`. `tx.origin` may also behave differently if it is an L1 => L2 transaction. It also implements some new opcode [L1BLOCKNUMBER](Chains may also implement new opcodes).
 
 Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-support) in some operations/opcodes like: `blockhash(x)`, `block.coinbase`, `block.difficulty`, `block.number`. `msg.sender` may also behave different for L1 => L2 "retryable ticket" transactions.
 
