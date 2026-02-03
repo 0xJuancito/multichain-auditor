@@ -105,7 +105,7 @@ Chainlink provides more price feeds for some chains like [Ethereum](https://docs
 
 💡 Check that the price feed for the desired pair is supported on all of the deployed chains.
 
-💡 Check that the correct addresses are set correctly for each chain if they are hardcoded.
+💡 Check that the correct addresses are set for each chain if they are hardcoded.
 
 ### AMM pools `token0` and `token1` order
 
