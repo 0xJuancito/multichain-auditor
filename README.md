@@ -133,7 +133,7 @@ Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-supp
 
 💡 Pay attention to projects using a Solidity version `>= 0.8.20` and check if it is supported on the deployed chains.
 
-ℹ️ Arbitrum added support in [ArbOS 11](https://docs.arbitrum.io/for-devs/concepts/differences-between-arbitrum-ethereum/solidity-support) and Optimism introduced support for it on the [Canyon Upgrade](https://blog.oplabs.co/canyon-hardfork/) .
+ℹ️ Arbitrum added support in [ArbOS 11](https://docs.arbitrum.io/for-devs/concepts/differences-between-arbitrum-ethereum/solidity-support) and Optimism introduced support for it on the [Canyon Upgrade](https://blog.oplabs.co/canyon-hardfork/).
 
 ### Address Aliasing - `tx.origin` / `msg.sender`
 
