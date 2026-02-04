@@ -22,10 +22,11 @@ Take the observations in this repository as a guideline and kickstarter to your 
   - [Support for the push0 opcode](#support-for-the-push0-opcode)
   - [Address Aliasing - tx.origin / msg.sender](#address-aliasing---txorigin--msgsender)
   - [tx.origin == msg.sender](#txorigin--msgsender)
+  - [Cross-chain message vulnerabilities](#cross-chain-message-vulnerabilities)
   - [transfer, send and fixed gas operations](#transfer-send-and-fixed-gas-operations)
   - [Gas fees](#gas-fees)
   - [Frontrunning](#frontrunning)
-  - [Signature replay](#signature-replay)
+  - [Signature replay across chains](#signature-replay-across-chains)
   - [Hardcoded Contract Addresses](#hardcoded-contract-addresses)
   - [ERC20 decimals](#erc20-decimals)
   - [Contracts Interface](#contracts-interface)
@@ -93,7 +94,7 @@ function isSequencerActive() internal view returns (bool) {
 }
 ```
 
-💡 Check if the projects handles the scenarios where a sequencer is down on optimistic rollup protocols.
+💡 Check if the project handles the scenarios where a sequencer is down on optimistic rollup protocols.
 
 📝 [1](https://github.com/sherlock-audit/2023-02-bond-judging/issues/1) [2](https://github.com/sherlock-audit/2023-01-sentiment-judging/issues/16) [3](https://github.com/sherlock-audit/2022-11-sentiment-judging/issues/3) [4](https://github.com/sherlock-audit/2023-04-jojo-judging/issues/101) [5](https://github.com/code-423n4/2022-09-y2k-finance-findings/issues/278)
 
@@ -105,7 +106,7 @@ Chainlink provides more price feeds for some chains like [Ethereum](https://docs
 
 💡 Check that the price feed for the desired pair is supported on all of the deployed chains.
 
-💡 Check that the correct addresses are set correctly for each chain if they are hardcoded.
+💡 Check that the correct addresses are set for each chain if they are hardcoded.
 
 ### AMM pools `token0` and `token1` order
 
@@ -121,7 +122,7 @@ As contracts may have different addresses on different chains, the token order c
 
 Some chains implement opcodes with some modification compared to Ethereum, or are not supported.
 
-Optimism for example, [has a different implementation](https://community.optimism.io/docs/developers/build/differences/#modified-opcodes) of opcodes like `block.coinbase`, `block.difficulty`, `block.basefee`. `tx.origin` may also behave different if the it is an L1 => L2 transaction. It also implements some new opcode [L1BLOCKNUMBER](Chains may also implement new opcodes).
+Optimism for example, [has a different implementation](https://community.optimism.io/docs/developers/build/differences/#modified-opcodes) of opcodes like `block.coinbase`, `block.difficulty`, `block.basefee`. `tx.origin` may also behave different if the it is an L1 => L2 transaction. It also implements some new opcodes like `L1BLOCKNUMBER`.
 
 Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-support) in some operations/opcodes like: `blockhash(x)`, `block.coinbase`, `block.difficulty`, `block.number`. `msg.sender` may also behave different for L1 => L2 "retryable ticket" transactions.
 
@@ -133,7 +134,7 @@ Arbitrum also [has some differences](https://developer.arbitrum.io/solidity-supp
 
 💡 Pay attention to projects using a Solidity version `>= 0.8.20` and check if it is supported on the deployed chains.
 
-ℹ️ Arbitrum added support in [ArbOS 11](https://docs.arbitrum.io/for-devs/concepts/differences-between-arbitrum-ethereum/solidity-support) and Optimism introduced support for it on the [Canyon Upgrade](https://blog.oplabs.co/canyon-hardfork/) .
+ℹ️ Arbitrum added support in [ArbOS 11](https://docs.arbitrum.io/for-devs/concepts/differences-between-arbitrum-ethereum/solidity-support) and Optimism introduced support for it on the [Canyon Upgrade](https://blog.oplabs.co/canyon-hardfork/).
 
 ### Address Aliasing - `tx.origin` / `msg.sender`
 
@@ -149,7 +150,7 @@ From [Optimism documentation](https://community.optimism.io/docs/developers/buil
 
 > On L1 Ethereum tx.origin is equal to msg.sender only when the smart contract was called directly from an externally owned account (EOA). However, on Optimism tx.origin is the origin on Optimism. It could be an EOA. However, in the case of messages from L1, it is possible for a message from a smart contract on L1 to appear on L2 with tx.origin == msg.sender. This is unlikely to make a significant difference, because an L1 smart contract cannot directly manipulate the L2 state. However, there could be edge cases we did not think about where this matters.
 
-💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
+💡 Verify that the expected behaviour of `tx.origin` and `msg.sender` holds on all deployed chains
 
 ### Cross-chain message vulnerabilities
 
@@ -299,13 +300,13 @@ Contracts deployed on different chains may behave differently.
 
 On the XDai chain, USDC, WBTC, and WETH contained post-transfer callback procedures, as opposed to their traditional ERC20 implementations on other chains with no callback.
 
-That enabled the possibility of a re-entrancy attack that was exploited and ultimately [derived on the fork of the chain](https://forum.gnosis.io/t/gip-31-should-gnosis-chain-perform-a-hardfork-to-upgrade-the-token-contract-vulnerable-to-the-reentrancy-attack/4134).
+That enabled the possibility of a re-entrancy attack that was exploited and ultimately [led to a fork of the chain](https://forum.gnosis.io/t/gip-31-should-gnosis-chain-perform-a-hardfork-to-upgrade-the-token-contract-vulnerable-to-the-reentrancy-attack/4134).
 
-💡 Check that implementations of contracts match on different chains, or that their differences won't incur on any new vulnerability.
+💡 Check that implementations of contracts match on different chains, or that their differences won't result in any new vulnerability.
 
 ### Precompiles
 
-Chains have precompiled contracts on different addresses like [Arbitrum](https://developer.arbitrum.io/arbos/precompiles) or [Optimism](https://github.com/ethereum-optimism/optimism/blob/develop/specs/predeploys.md). Care has to be taken if some is used that is not available, works differently or is on a different address.
+Chains have precompiled contracts on different addresses like [Arbitrum](https://developer.arbitrum.io/arbos/precompiles) or [Optimism](https://github.com/ethereum-optimism/optimism/blob/develop/specs/predeploys.md). Care has to be taken if one is used that is not available, works differently, or is on a different address.
 
 💡 Double-check the use of precompiled contracts, their addresses, and their compatibility
 
