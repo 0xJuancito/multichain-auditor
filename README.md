@@ -299,7 +299,7 @@ Contracts deployed on different chains may behave differently.
 
 On the XDai chain, USDC, WBTC, and WETH contained post-transfer callback procedures, as opposed to their traditional ERC20 implementations on other chains with no callback.
 
-That enabled the possibility of a re-entrancy attack that was exploited and ultimately [derived on the fork of the chain](https://forum.gnosis.io/t/gip-31-should-gnosis-chain-perform-a-hardfork-to-upgrade-the-token-contract-vulnerable-to-the-reentrancy-attack/4134).
+That enabled the possibility of a re-entrancy attack that was exploited and ultimately [led to a fork of the chain](https://forum.gnosis.io/t/gip-31-should-gnosis-chain-perform-a-hardfork-to-upgrade-the-token-contract-vulnerable-to-the-reentrancy-attack/4134).
 
 💡 Check that implementations of contracts match on different chains, or that their differences won't incur on any new vulnerability.
 
