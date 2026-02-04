@@ -23,7 +23,7 @@ Take the observations in this repository as a guideline and kickstarter to your 
   - [Address Aliasing - tx.origin / msg.sender](#address-aliasing---txorigin--msgsender)
   - [tx.origin == msg.sender](#txorigin--msgsender)
   - [Cross-chain message vulnerabilities](#cross-chain-message-vulnerabilities)
-  - [transfer, send and fixed gas operations](#txorigin--msgsender)
+  - [transfer, send and fixed gas operations](#transfer-send-and-fixed-gas-operations)
   - [Gas fees](#gas-fees)
   - [Frontrunning](#frontrunning)
   - [Signature replay across chains](#signature-replay-across-chains)
