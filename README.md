@@ -22,6 +22,7 @@ Take the observations in this repository as a guideline and kickstarter to your 
   - [Support for the push0 opcode](#support-for-the-push0-opcode)
   - [Address Aliasing - tx.origin / msg.sender](#address-aliasing---txorigin--msgsender)
   - [tx.origin == msg.sender](#txorigin--msgsender)
+  - [Cross-chain message vulnerabilities](#cross-chain-message-vulnerabilities)
   - [transfer, send and fixed gas operations](#txorigin--msgsender)
   - [Gas fees](#gas-fees)
   - [Frontrunning](#frontrunning)
