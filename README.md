@@ -149,7 +149,7 @@ From [Optimism documentation](https://community.optimism.io/docs/developers/buil
 
 > On L1 Ethereum tx.origin is equal to msg.sender only when the smart contract was called directly from an externally owned account (EOA). However, on Optimism tx.origin is the origin on Optimism. It could be an EOA. However, in the case of messages from L1, it is possible for a message from a smart contract on L1 to appear on L2 with tx.origin == msg.sender. This is unlikely to make a significant difference, because an L1 smart contract cannot directly manipulate the L2 state. However, there could be edge cases we did not think about where this matters.
 
-💡 Verify that the expected behavior of `tx.origin` and `msg.sender` holds on all deployed chains
+💡 Verify that the expected behaviour of `tx.origin` and `msg.sender` holds on all deployed chains
 
 ### Cross-chain message vulnerabilities
 
